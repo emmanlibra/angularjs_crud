@@ -1,0 +1,29 @@
+<md-dialog>
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2>Details</h2>
+            <span flex></span>
+            <md-button class="md-icon-button" ng-click="cancel()">
+                <md-icon md-svg-src="img/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+        <div class="md-dialog-content">
+
+                <label>First Name: <b><span>{{ data.firstname }}</span></b></label> <br />
+
+                <label>Last Name: <b><span>{{ data.lastname }}</span></b></label> <br />
+
+                <label>Birthdate: <b><span ng-bind="data.birthdate | date:'MM/dd/yyyy'"></span></b></label> <br />
+
+                <label>Brief description: <b><span>{{ data.description }}</span></b></label> <br />
+
+        </div>
+        <div>
+            <md-button ng-click="cancel()" class="md-raised md-primary" type="button">Ok</md-button>
+        </div>
+
+    </md-dialog-content>
+</md-dialog>

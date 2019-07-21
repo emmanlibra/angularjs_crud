@@ -1,0 +1,41 @@
+<md-dialog>
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2>Fill in the details</h2>
+            <span flex></span>
+            <md-button class="md-icon-button" ng-click="cancel()">
+                <md-icon md-svg-src="img/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+        <div class="md-dialog-content">
+            <form name="addForm">
+                <md-input-container class="md-block" flex-gt-xs="">
+                    <label>First Name</label>
+                    <input ng-model="listController.firstname" size="70" autocomplete="off" required>
+                </md-input-container>
+
+                <md-input-container class="md-block" flex-gt-xs="">
+                    <label>Last Name</label>
+                    <input ng-model="listController.lastname" size="70" autocomplete="off" required>
+                </md-input-container>
+
+                <md-datepicker ng-model="listController.birthdate" md-placeholder="MM/DD/YYYY" md-max-date="today" >
+                </md-datepicker>
+
+                <md-input-container class="md-block">
+                    <label>Briefly describe yourself</label>
+                    <textarea ng-model="listController.description" md-maxlength="150" rows="3"
+                        md-select-on-focus></textarea>
+                </md-input-container>
+
+                <md-button ng-click="answer(listController)" ng-disabled="addForm.$invalid" class="md-raised md-primary"
+                    type="button">Save</md-button>
+                <md-button ng-click="cancel()" class="md-raised md-warn" type="button">Cancel</md-button>
+            </form>
+
+        </div>
+    </md-dialog-content>
+</md-dialog>

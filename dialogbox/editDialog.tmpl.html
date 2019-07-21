@@ -1,0 +1,41 @@
+<md-dialog>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>Edit</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="cancel()">
+                    <md-icon md-svg-src="img/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+    
+        <md-dialog-content>
+            <div class="md-dialog-content">
+                <form name="editForm">
+                    
+                    <md-input-container class="md-block" flex-gt-xs="">
+                        <label>First Name</label>
+                        <input ng-model="data.firstname" size="70" autocomplete="off" required>
+                    </md-input-container>
+    
+                    <md-input-container class="md-block" flex-gt-xs="">
+                        <label>Last Name</label>
+                        <input ng-model="data.lastname" size="70" autocomplete="off" required>
+                    </md-input-container>
+    
+                    <md-datepicker ng-model="data.birthdate" md-placeholder="MM/DD/YYYY" md-max-date="today">
+                    </md-datepicker>
+    
+                    <md-input-container class="md-block">
+                        <label>Briefly describe yourself</label>
+                        <textarea ng-model="data.description" md-maxlength="150" rows="3"
+                            md-select-on-focus></textarea>
+                    </md-input-container>
+    
+                    <md-button ng-click="answer(data)" ng-disabled="editForm.$invalid" class="md-raised md-primary"
+                        type="button">Save</md-button>
+                </form>
+    
+            </div>
+        </md-dialog-content>
+    </md-dialog>
